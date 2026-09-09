@@ -1,4 +1,7 @@
 # Miscellaneous
+venv/
+__pycache__/
+*.py[cod]
 *.class
 *.log
 *.pyc
