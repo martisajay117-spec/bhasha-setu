@@ -24,10 +24,12 @@ tasks.register<Delete>("clean") {
 }
 
 subprojects {
-    afterEvaluate {
-        if (plugins.hasPlugin("com.android.application") || plugins.hasPlugin("com.android.library")) {
-            configure<com.android.build.gradle.BaseExtension> {
-                compileSdkVersion(34)
+    if (project.name != "app") {
+        afterEvaluate {
+            if (plugins.hasPlugin("com.android.application") || plugins.hasPlugin("com.android.library")) {
+                configure<com.android.build.gradle.BaseExtension> {
+                    compileSdkVersion(34)
+                }
             }
         }
     }
