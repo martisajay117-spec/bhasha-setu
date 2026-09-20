@@ -19,12 +19,12 @@ class MemoryAndLatencyManager {
   }
 
   // Clear memory cache between operations to prevent spikes on 2GB RAM devices
-  static void purgeMemoryCache() {
+  static Future<void> purgeMemoryCache() async {
     // Force image and text painter cache eviction
     PaintingBinding.instance.imageCache.clear();
     PaintingBinding.instance.imageCache.clearLiveImages();
 
     // Explicit low-memory event notification to Flutter engine
-    SystemChannels.system.invokeMethod('Memory.lowMemory');
+    await const MethodChannel('flutter/system').invokeMethod('Memory.lowMemory');
   }
 }

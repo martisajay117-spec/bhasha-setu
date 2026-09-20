@@ -125,8 +125,8 @@ class _HomeScreenState extends State<HomeScreen> {
       if (available) {
         setState(() => _isListening = true);
         _speech.listen(
-          localeId: 'hi_IN',
-          onResult: (val) {
+          listenOptions: stt.SpeechListenOptions(localeId: 'hi_IN'),
+          onResult: (val) async {
             if (val.finalResult) {
               MemoryAndLatencyManager.startLatencyBenchmark();
 
@@ -136,7 +136,7 @@ class _HomeScreenState extends State<HomeScreen> {
               _translate(val.recognizedWords);
 
               int latency = MemoryAndLatencyManager.stopLatencyBenchmark();
-              MemoryAndLatencyManager.purgeMemoryCache();
+              await MemoryAndLatencyManager.purgeMemoryCache();
 
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
