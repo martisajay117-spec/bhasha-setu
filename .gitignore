@@ -47,6 +47,10 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 
+# Built APK files (do not commit binaries to git)
+*.apk
+*.aab
+
 # Widget Preview related
 .widget_preview/
 .gradle_home/
