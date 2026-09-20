@@ -18,7 +18,7 @@ class PdfWorksheetService {
         margin: const pw.EdgeInsets.all(24),
         build: (pw.Context context) {
           return pw.Column(
-            cross: pw.CrossAxisAlignment.start,
+            crossAxisAlignment: pw.CrossAxisAlignment.start,
             children: [
               pw.Container(
                 width: double.infinity,
@@ -28,7 +28,7 @@ class PdfWorksheetService {
                   borderRadius: pw.BorderRadius.circular(6),
                 ),
                 child: pw.Column(
-                  cross: pw.CrossAxisAlignment.start,
+                  crossAxisAlignment: pw.CrossAxisAlignment.start,
                   children: [
                     pw.Text(
                       'PALASH MTB-MLE PROGRAMME | JHARKHAND',
@@ -121,7 +121,7 @@ class PdfWorksheetService {
                       pw.Padding(
                         padding: const pw.EdgeInsets.all(12),
                         child: pw.Column(
-                          cross: pw.CrossAxisAlignment.start,
+                          crossAxisAlignment: pw.CrossAxisAlignment.start,
                           children: [
                             pw.Text(hindiPrompt,
                                 style: pw.TextStyle(
@@ -133,7 +133,7 @@ class PdfWorksheetService {
                       pw.Padding(
                         padding: const pw.EdgeInsets.all(12),
                         child: pw.Column(
-                          cross: pw.CrossAxisAlignment.start,
+                          crossAxisAlignment: pw.CrossAxisAlignment.start,
                           children: [
                             pw.Text(santhaliOlChiki,
                                 style: pw.TextStyle(
